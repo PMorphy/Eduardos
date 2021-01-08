@@ -1,8 +1,8 @@
-import './App.css';
-import { Fragment } from 'react';
+import React, { Fragment } from 'react';
 import { Link } from 'react-router-dom';
+import { data } from '../data';
 
-function App() {
+export default function Shop() {
   const slideMenu = () => {
     const menuCheck = document.getElementById('side-menu').offsetLeft;
 
@@ -25,17 +25,18 @@ function App() {
           <div className='hamburger'>
             <div></div>
           </div>
-          <p className='large logo'>El Zarape</p>
+          <p className='large logo'>Eduardo's</p>
           <nav>
             <ul className='flex'>
               <li>
                 <Link to='/'>Home</Link>
               </li>
+
               <li>
                 <Link to='/categories'>Shop</Link>
               </li>
               <li>
-                <Link to='/shop'>About</Link>
+                <a href='about.html'>About</a>
               </li>
               <li>
                 <a href='contact.html'>Contact</a>
@@ -49,10 +50,10 @@ function App() {
         <nav>
           <ul>
             <li>
-              <Link to='categories'>Shop</Link>
+              <Link to='/categories'>Shop</Link>
             </li>
             <li>
-              <Link to='/specials'>Specials</Link>
+              <a href='specials.html'>Specials</a>
             </li>
             <li>
               <a href='contact.html'>Contact</a>
@@ -64,26 +65,20 @@ function App() {
         </nav>
       </div>
 
-      <div className='landing'>
-        <div className='dark-overlay'>
-          <div className='landing-inner flex'>
-            <p className='x-large'>Eduardo's Leather Specialties</p>
-            <p className='lead'>
-              Fine Leather Goods Made In The Heart of Mexico
-            </p>
-            <div className='buttons'>
-              <Link to='/categories' className='btn'>
-                Shop
-              </Link>
-              <Link to='/specials' className='btn btn-primary'>
-                Specials
-              </Link>
-            </div>
-          </div>
+      <div className='shop container bg-white'>
+        <div className='shop-hero flex'>
+          <p className='x-large primary-text title'>Specials</p>
+          <p className='lead'>
+            All Specials are Offered for a Limited Time, at Family Friendly
+            Discounts.
+          </p>
         </div>
+
+        <main>
+          <div className='specials'></div>
+        </main>
+        <footer className='bg-light'>All Rights Reserved &copy;</footer>
       </div>
     </Fragment>
   );
 }
-
-export default App;
